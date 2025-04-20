@@ -31,6 +31,15 @@ df, raw_conversations = load_data()
 # Sidebar filters
 st.sidebar.title("Filters")
 
+# Add explanation about teacher-selected questions
+st.sidebar.info(
+    "Note about teacher-selected questions: Teachers can specify concepts they want to cover, "
+    "which are then incorporated into the AI's question generation process. While teachers "
+    "cannot directly specify the exact questions, they can influence the conversation by "
+    "suggesting key concepts they want students to explore. The AI still makes the final "
+    "decision on how to frame and ask the questions."
+)
+
 # Concepts Filter
 concept_options = [
     "All conversations",
