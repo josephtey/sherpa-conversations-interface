@@ -33,17 +33,17 @@ st.sidebar.title("Filters")
 
 # Concepts Filter
 concept_options = [
-    "All Conversations",
-    "Teacher gave AI a prompt for some questions",
-    "100% AI driven",
+    "All conversations",
+    "Teacher-selected questions",
+    "100% AI selected questions",
 ]
 selected_concepts = st.sidebar.selectbox("Concept Filter", concept_options)
 
 # Apply filters
 filtered_df = df.copy()
-if selected_concepts == "With Concepts":
+if selected_concepts == "Teacher-selected questions":
     filtered_df = filtered_df[filtered_df["has_concepts"] == True]
-elif selected_concepts == "Without Concepts":
+elif selected_concepts == "100% AI selected questions":
     filtered_df = filtered_df[filtered_df["has_concepts"] == False]
 
 # Display conversation count
